@@ -12,7 +12,7 @@ Regístrate en DevStagram
            <img src="{{ asset('img/registrar.jpg') }}" alt="Imagen de registro de usuarios" class="w-full" />
         </div>
         <div class="md:w-4/12 bg-white p-6 rounded-lg shadow-xl">
-            <form action="/crear-cuenta" method="POST">
+            <form action="{{route('register')}}" method="POST">
                 @csrf
                 <div class="mb-5">
                     <label for="name" id="name" class="mb-2 block uppercase text-gray-500 font-bold">
