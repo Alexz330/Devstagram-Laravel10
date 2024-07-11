@@ -1,6 +1,7 @@
 import Dropzone from "dropzone";
 
 Dropzone.autoDiscover = false;
+console.log("hola que pedo");
 
 const dropzone = new Dropzone("#dropzone", {
    dictDefaultMessage: "Sube tu imagen aquí",
