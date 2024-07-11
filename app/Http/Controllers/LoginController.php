@@ -22,6 +22,6 @@ class LoginController extends Controller
         if (!auth()->attempt($request->only('email', 'password'),$request->remember)) {
             return back()->with('mensaje', 'Credenciales incorrecta');
         }
-        return redirect()->route('post.index');
+        return redirect()->route('posts.index', auth()->user()->username);
     }
 }
