@@ -33,8 +33,10 @@ Route::post('/login',[LoginController::class, 'store'])->name('login');
 Route::post('/logout',[LogoutController::class, 'store'])->name('logout');
 
 Route::get('/{user:username}',[PostController::class, 'index'])->name('posts.index');
-Route::get('/post/create',[PostController::class, 'create'])->name('posts.create');
 
+
+Route::get('/post/create',[PostController::class, 'create'])->name('posts.create');
+Route::post('/post',[PostController::class, 'store'])->name('posts.store');
 
 Route::post('/imagenes',[ImageController::class, 'store'])->name('imagenes.store');
 
