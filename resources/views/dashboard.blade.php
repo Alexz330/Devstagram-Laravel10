@@ -36,7 +36,7 @@
         @if ($posts->count())
             <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
                 @foreach ($posts as $post)
-                    <a href="">
+                    <a href="{{route('posts.show',$post)}}">
                         <img src="{{ asset('uploads') . '/' . $post->imagen }}" alt="Imagen del post {{ $post->titulo }}">
                     </a>
                 @endforeach
