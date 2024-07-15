@@ -17,10 +17,14 @@
                 <p class="mt-5">{{$post->descripcion}}</p>
             </div>
         </div>
+            
         <div class="md:w-1/2 p-5">
+
             <div class="shadow bg-white p-5 mb-5">
+        @auth
+
                 <p class="text-xl font-bold text-center mb-4">Agrega un Nuevo comentario</p>
-                <form action="{{ route('posts.store') }}" method="POST">
+                <form action="{{ route('comentarios.store',["post"=>$post,"user"=>$user]) }}" method="POST">
                     @csrf
                     <div class="mb-5">
     
@@ -43,7 +47,10 @@
     
     
                 </form>
+        @endauth
+
             </div>
+
         </div>
 
     </div>

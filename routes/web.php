@@ -5,7 +5,7 @@ use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ImageController;
-
+use App\Models\Comentario;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -37,6 +37,10 @@ Route::get('/{user:username}',[PostController::class, 'index'])->name('posts.ind
 Route::get('/post/create',[PostController::class, 'create'])->name('posts.create');
 Route::post('/post',[PostController::class, 'store'])->name('posts.store');
 Route::get('/{user:username}/post/{post}',[PostController::class, 'show'])->name('posts.show');
+
+// Rutas para los comentarios
+Route::post('/{user:username}/post/{post}',[Comentario::class, 'store'])->name('comentarios.store');
+
 
 Route::post('/imagenes',[ImageController::class, 'store'])->name('imagenes.store');
 
