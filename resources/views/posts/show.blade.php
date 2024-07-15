@@ -5,7 +5,7 @@
 @endsection
 
 @section('contenido')
-    <div class="container mx-auto flex">
+    <div class="container mx-auto md:flex">
         <div class="md:w-1/2">
             <img src="{{ asset('uploads') . '/' . $post->imagen }}" alt="Imagen del post {{ $post->titulo }}">
             <div class="p-3">
@@ -24,6 +24,14 @@
         @auth
 
                 <p class="text-xl font-bold text-center mb-4">Agrega un Nuevo comentario</p>
+
+                @if (
+                    session('mensaje')
+                )
+                    <div class="bg-green-500 p-2 rounded-lg mb-6 text-white text-center uppercase font-bold">{{session('mensaje')}}</div>
+                    
+                @endif
+
                 <form action="{{ route('comentarios.store',["post"=>$post,"user"=>$user]) }}" method="POST">
                     @csrf
                     <div class="mb-5">
@@ -35,7 +43,7 @@
                         <textarea id="comentario" name="comentario" type="text" placeholder="Agrega un comentario"
                             class="border p-3 w-full rounded-lg @error('descripcion') border-red-500 @enderror"></textarea>
                     </div>
-                    @error('descripcion')
+                    @error('comentario')
                         <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
                     @enderror
     
