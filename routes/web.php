@@ -37,6 +37,7 @@ Route::get('/{user:username}',[PostController::class, 'index'])->name('posts.ind
 Route::get('/post/create',[PostController::class, 'create'])->name('posts.create');
 Route::post('/post',[PostController::class, 'store'])->name('posts.store');
 Route::get('/{user:username}/post/{post}',[PostController::class, 'show'])->name('posts.show');
+Route::delete('/posts/{post}',[PostController::class, 'destroy'])->name('posts.destroy');
 
 // Rutas para los comentarios
 Route::post('/{user:username}/post/{post}',[ComentarioController::class, 'store'])->name('comentarios.store');
