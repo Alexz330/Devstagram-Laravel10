@@ -7,13 +7,13 @@
 @section('contenido')
     <div class="md:flex md:justify-center">
         <div class="md:w-1/2 bg-white shadow p-6">
-            <form action="mt-10 md:mt-0" method="post">
+            <form method="POST" action="{{ route('perfil.store') }}" enctype="multipart/form-data" class="mt-10 md:mt-0" >
                 @csrf
                 <div class="mb-5">
-                    <label for="name" id="name" class="mb-2 block uppercase text-gray-500 font-bold">
+                    <label for="name" id="username" class="mb-2 block uppercase text-gray-500 font-bold">
                         Username
                     </label>
-                    <input id="name" name="name" type="text" placeholder="Tu nombre de usuario"
+                    <input id="username" name="username" type="text" placeholder="Tu nombre de usuario"
                         class="border p-3 w-full rounded-lg @error('name') border-red-500 @enderror"
                         value="{{ auth()->user()->username }}" />
                     @error('username')

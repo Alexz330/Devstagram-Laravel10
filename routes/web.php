@@ -27,7 +27,7 @@ Route::get('/', function () {
 
 //Ruta para editar el perfil
 Route::get('/editar-perfil',[PerfilController::class, 'index'])->name('perfil.index');
-Route::post('/editar-perfil',[PerfilController::class, 'sttore'])->name('perfil.store');
+Route::post('/editar-perfil',[PerfilController::class, 'store'])->name('perfil.store');
 
 
 Route::get('/register',[RegisterController::class, 'index'])->name('register');
